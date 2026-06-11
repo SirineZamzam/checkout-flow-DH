@@ -33,6 +33,16 @@ const stepComplete =
         "stepComplete"
     );
 
+const backToDetailsBtn =
+    document.getElementById(
+        "backToDetailsBtn"
+    );
+
+const phoneInput =
+    document.getElementById(
+        "phone"
+    );
+
 const loader =
     document.getElementById(
         "loader"
@@ -163,19 +173,19 @@ function validateInformation() {
     }
 
     if (
-        phone.value.trim().length < 8
+        phoneInput.value.trim().length < 8
     ) {
 
         showError(
-            phone,
-            "Enter a valid phone"
+            phoneInput,
+            "Phone entry must contain at least 8 digits minimum"
         );
 
         valid = false;
 
     } else {
 
-        clearError(phone);
+        clearError(phoneInput);
     }
 
     if (
@@ -252,6 +262,30 @@ continueBtn.addEventListener(
         stepPayment.classList.add(
             "active"
         );
+    }
+);
+
+/* BACK NAVIGATION STEP TRIGGER */
+backToDetailsBtn.addEventListener(
+    "click",
+    () => {
+        paymentSection.classList.add("d-none");
+        infoSection.classList.remove("d-none");
+        
+        stepPayment.classList.remove("active");
+        stepInfo.classList.add("active");
+    }
+);
+
+/* REAL-TIME PHONE NUMBER RECOGNITION MASK */
+phoneInput.addEventListener(
+    "input",
+    function () {
+        this.value = this.value.replace(/\D/g, "");
+        
+        if (this.value.trim().length >= 8) {
+            clearError(this);
+        }
     }
 );
 

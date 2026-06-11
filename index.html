@@ -77,6 +77,8 @@
 
             <div id="checkoutWrapper">
 
+                <form id="checkoutForm" onsubmit="event.preventDefault();">
+
                 <div class="row g-4">
 
                     <!-- LEFT COLUMN -->
@@ -269,11 +271,14 @@
 
                                     </div>
 
-                                    <button id="payBtn" class="primary-btn mt-4">
-
-                                        Pay $88
-
-                                    </button>
+                                    <div class="d-flex align-items-center justify-content-between mt-4">
+                                        <button type="button" id="backToDetailsBtn" class="btn btn-link text-decoration-none text-muted p-0">
+                                            <i class="bi bi-arrow-left"></i> Back to details
+                                        </button>
+                                        <button type="button" id="payBtn" class="primary-btn m-0">
+                                            Pay $88
+                                        </button>
+                                    </div>
 
                                 </div>
 
@@ -409,7 +414,7 @@
                     </div>
 
                 </div>
-
+                </form>
             </div>
 
             <div id="resultSection"></div>

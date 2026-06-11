@@ -45,3 +45,5 @@ To run the project over a local development environment:
 1. Open the project folder inside Visual Studio Code.
 2. Install the Live Server extension by Ritwick Dey.
 3. Click the "Go Live" button in the bottom right status bar of VS Code.
+
+Author: Sirine
